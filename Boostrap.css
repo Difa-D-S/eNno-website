@@ -41,7 +41,7 @@
 /* About */
 
 .about{
-    margin-top: 15px;
+    margin-top: 5%;
 }
 
 .get-btn{
@@ -167,7 +167,7 @@ span{
     background-color: rgb(255, 255, 255) !important;
 }
 
-.container{
+.serve{
     padding-bottom:40px;
 }
 
@@ -196,22 +196,79 @@ ul{
 
 /* gallery */
 
-.pop{
-    display:none;
-    position:absolute;
-    bottom:30px;
-    width:92%;
-    margin:0% 4%;
+.img1,.img2,.img3, .img4, .img5,.img6,.img7,.img8,.img9{
+    position: relative;
 }
 
-.img1:hover .pop
-.img2:hover .pop
-.img3:hover .pop
-.img4:hover .pop
-.img5:hover .pop
-.img6:hover .pop
-.img7:hover .pop
-.img8:hover .pop
+.pop{
+    position:absolute;
+    background-color: rgba(255, 255, 255, 0.75);
+    bottom:30px;
+    width: 92%;
+    display: none;
+}
+
+.img1:hover .pop,
+.img2:hover .pop,
+.img3:hover .pop,
+.img4:hover .pop,
+.img5:hover .pop,
+.img6:hover .pop,
+.img7:hover .pop,
+.img8:hover .pop,
 .img9:hover .pop{
+    display: block;
     animation-name: popup;
+    animation-duration: 0.25s;
+    transition: all ease-in-out;
+}
+
+@keyframes popup{
+    0%{
+        bottom:10px
+    }
+    100%{
+        bottom:30px;
+    }
+}
+
+
+
+/* Testi */
+
+.testimonials{
+    background-color: #f9f9fa;
+    padding: 65px 0;
+    
+}
+
+.main-box{
+    width: 400px;
+    /* box-sizing: content-box; */
+}
+
+.wh-card{
+    background-color: white;
+    padding: 20px 20px 60px 20px;
+    border-radius: 8px;
+}
+
+.align{
+    text-align: justify;
+}
+
+.quotes{
+    font-size: x-large;
+    opacity: 0.5;
+}
+
+.profile img{
+    border-radius: 50%;
+    width:80px;
+    border:4px solid white;
+}
+
+.profile{
+    margin-top: -40px;
+    margin-left: 20px;
 }
