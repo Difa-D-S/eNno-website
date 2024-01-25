@@ -96,6 +96,10 @@ span{
 
 /* Card */
 
+.up-card{
+    margin-top: 0 !important;
+}
+
 .card{
     background-color: #f9f9fadd!important;
     border:none!important;
@@ -198,6 +202,7 @@ ul{
 
 .img1,.img2,.img3, .img4, .img5,.img6,.img7,.img8,.img9{
     position: relative;
+    /* width: 100%; */
 }
 
 .pop{
@@ -237,14 +242,9 @@ ul{
 /* Testi */
 
 .testimonials{
-    background-color: #f9f9fa;
+    background-color: #d2d2d7;
     padding: 65px 0;
     
-}
-
-.main-box{
-    width: 400px;
-    /* box-sizing: content-box; */
 }
 
 .wh-card{
@@ -264,11 +264,178 @@ ul{
 
 .profile img{
     border-radius: 50%;
-    width:80px;
+    width:80px !important;
     border:4px solid white;
 }
 
 .profile{
     margin-top: -40px;
     margin-left: 20px;
+}
+
+
+/* Call */
+
+.call{
+    
+    background: #16df7e;
+    background-size: cover;
+    padding: 70px 0;
+    color:white;
+}
+
+.call .para-text{
+    font-size: 17px !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+
+.border-btn{
+    border: 2px solid !important;
+    border-radius: 5px !important;
+    border-color: white !important;
+    color:white !important;
+    padding:10px 28px 10px 28px !important;
+}
+
+.border-btn:hover{
+    background-color: #1862f5 !important;
+    border-radius: 5px !important;
+    border-color: #1862f5 !important;
+}
+
+/* TEAM */
+
+.team-bg{
+    background-color: #f9f9fa;
+    margin-bottom: 20px !important;
+}
+
+.team{
+    padding-bottom:70px;
+}
+
+.white-bg{
+    background-color: white;
+}
+
+.ico-colors{
+    color:rgba(145, 149, 146, 0.879);
+    font-size: 15px !important;
+}
+
+.ico-color{
+    color:rgba(145, 149, 146, 0.879);
+    font-size: 20px;
+}
+
+.ico-color i:hover{
+    color:green;
+}
+
+/* Contact */
+.details{
+    background-color: #f9f9fa;
+    border-top:2px solid green;
+    border-bottom:2px solid green;
+    padding:20px;
+}
+
+.h3-size{
+    color:rgb(68, 71, 69);
+}
+
+.para-size{
+    font-size: 15px !important;
+    color:rgba(145, 149, 146, 0.879);
+    padding-bottom: 15px;
+}
+
+.iconholder i{
+    font-size: 24px;
+    color:green;
+}
+.iconholder{
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.icon-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.subs{
+    font-size: 17px !important;
+}
+
+.sub{
+    font-size: 17px !important;
+}
+
+.form-btn{
+    background-color: #16df7e !important;
+    color: white !important;
+    padding:8px 20px !important;
+    font-size: 18px !important;
+}
+
+.bt-ce{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* Footer */
+
+.footer{
+    background-color: #f9f9fa;
+}
+
+.foot-margin{
+    padding-top: 70px !important;
+}
+
+.foot-para{
+    font-size: 17px !important;
+    color:rgba(145, 149, 146, 0.937) !important;
+}
+
+.foot-width{
+    width:60%;
+}
+
+.subscribe{
+    border-width: 0 !important;
+    margin-left:-10px !important;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+/* arrow */
+
+.arrow{
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: #16df7e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom:15px;
+    right:15px;
+}
+
+.arrow i{
+    color:white;
+}
+
+.arrow:hover{
+    background-color: green;
 }
