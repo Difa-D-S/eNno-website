@@ -19,7 +19,36 @@
 .navbar-brand{
     font-size: 30px;
     font-weight: bold;
+    font-family: "Raleway", sans-serif;
     align-items: center;
+}
+
+.Deep-Dropdown{
+    position: relative;
+    width: 100%;
+}
+
+.deep{
+    padding-bottom: 35px !important;
+}
+
+.submenu{
+    margin-left: 159px !important;
+    padding-top: 5px !important;
+    width:100%;
+    height:152px;
+}
+
+.submenu li .dropdown-item{
+    position:absolute;
+    width: 100%;
+    height: 23%;
+    display: inline-block;
+}
+
+.collapse{
+    font-weight: bold;
+    font-family: "Raleway", sans-serif;
 }
 
 .start{
@@ -239,12 +268,16 @@ ul{
 
 
 
-/* Testi */
+/* Testimonials */
 
 .testimonials{
-    background-color: #d2d2d7;
-    padding: 65px 0;
+    background-color: #f9f9fa !important;
+    padding-bottom: 70px !important;
     
+}
+
+.main-box{
+    width:400px;
 }
 
 .wh-card{
@@ -273,6 +306,14 @@ ul{
     margin-left: 20px;
 }
 
+.owl-dot span{
+    background-color: white !important;
+    border:1px solid green;
+}
+
+.owl-dots .active span{
+    background-color: green !important;
+}
 
 /* Call */
 
@@ -404,7 +445,7 @@ ul{
 
 .foot-para{
     font-size: 17px !important;
-    color:rgba(145, 149, 146, 0.937) !important;
+    color:rgba(145, 149, 146, 0.999) !important;
 }
 
 .foot-width{
@@ -415,6 +456,17 @@ ul{
     border-width: 0 !important;
     margin-left:-10px !important;
     border-radius: 0 4px 4px 0 !important;
+}
+
+.footer-icon i{
+    padding:9px;
+    margin:3px;
+    background-color: #82838446;
+    border-radius: 4px;
+}
+
+.font-size{
+    font-size: 15px !important;
 }
 
 /* arrow */
@@ -438,4 +490,25 @@ ul{
 
 .arrow:hover{
     background-color: green;
+}
+
+
+/* RESPONSIVE */
+
+@media all and (max-width:991px) {
+    .bt-ce{
+        padding-bottom: 60px !important;
+    }
+}
+
+@media all and (max-width:991px) {
+    .details{
+        margin-top: 12px !important;
+    }
+}
+
+@media all and (max-width:1360px) {
+    .main-box{
+        margin-left: 10px !important;
+    }
 }

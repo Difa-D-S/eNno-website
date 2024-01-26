@@ -10,6 +10,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <script type="text/javascript">
+      //	window.addEventListener("resize", function() {
+      //		"use strict"; window.location.reload(); 
+      //	});
+      
+      
+        document.addEventListener("DOMContentLoaded", function(){
+              
+      
+            /////// Prevent closing from click inside dropdown
+          document.querySelectorAll('.dropdown-menu').forEach(function(element){
+            element.addEventListener('click', function (e) {
+              e.stopPropagation();
+            });
+          })
+      
+      
+      
+          // make it as accordion for smaller screens
+          if (window.innerWidth < 992) {
+      
+            // close all inner dropdowns when parent is closed
+            document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+              everydropdown.addEventListener('hidden.bs.dropdown', function () {
+                // after dropdown is hidden, then find all submenus
+                  this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+                    // hide every submenu as well
+                    everysubmenu.style.display = 'none';
+                  });
+              })
+            });
+            
+            document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+              element.addEventListener('click', function (e) {
+          
+                  let nextEl = this.nextElementSibling;
+                  if(nextEl && nextEl.classList.contains('submenu')) {	
+                    // prevent opening link if link needs to open dropdown
+                    e.preventDefault();
+                    console.log(nextEl);
+                    if(nextEl.style.display == 'block'){
+                      nextEl.style.display = 'none';
+                    } else {
+                      nextEl.style.display = 'block';
+                    }
+      
+                  }
+              });
+            })
+          }
+          // end if innerWidth
+      
+        }); 
+  
+      </script>
   </head>
 <body>
     <!-- navbar -->
@@ -24,44 +80,42 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#About">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="#Service">Service</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Portfolio</a>
+              <a class="nav-link" href="#Portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Team</a>
+              <a class="nav-link" href="#Team">Team</a>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown<i class="fa-solid fa-angle-down"></i>
-              </a>
-              <ul class="dropdown-menu">
-                <li> <a class="dropdown-item" href="#">Dropdown 1</a> </li>
-
-                <li class="nav-item dropdown"> <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Deep Dropdown 2<i class="fa-solid fa-angle-right"></i></a>
-                  <ul class=" submenu dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
-                    <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
-                    <li><a class="dropdown-item" href="#">Submenu item 3</a></li>
-                </ul>
+              <a class="nav-link" href="#" data-bs-toggle="dropdown">Dropdown<i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"> Dropdown item 1 </a></li>
+                
+                <li class="nav-item dropdown"><a class="dropdown-item Deep-Dropdown nav-link" data-bs-toggle="dropdown" href="#"> Deep Dropdown<i class="fa-solid fa-angle-right"></i> </a>
+                  <ul class="submenu dropdown-menu">
+                    <li class="deep"><a class="dropdown-item" href="#">Deep Dropdown 1</a></li>
+                    <li class="deep"><a class="dropdown-item" href="#">Deep Dropdown 2</a></li>
+                    <li class="deep"><a class="dropdown-item" href="#">Deep Dropdown 3</a></li>
+                    <li class="deep"><a class="dropdown-item" href="#">Deep Dropdown 4</a></li>
+                  </ul>
                 </li>
                 
-                <li> <a class="dropdown-item" href="#">Dropdown 3</a> </li>
-                <li> <a class="dropdown-item" href="#">Dropdown 4</a> </li>
-              </ul>
+                <li><a class="dropdown-item" href="#"> Dropdown item 3 </a></li>
+                <li><a class="dropdown-item" href="#"> Dropdown item 4 </a></li>
+                </ul>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#Contact">Contact</a>
             </li>
           </ul>
           <button type="button" class="btn start">Get Started</button>
@@ -73,7 +127,7 @@
     
 <!-- About -->
 
-    <section>
+    <section id="About">
         <div class="container about">
             <div class="row">
                 <div class="col-md-5">
@@ -177,7 +231,7 @@
 
       <!-- Services -->
 
-      <section class="services mt-5">
+      <section class="services mt-5" id="Service">
         <div class="container serve">
           <h1 class="behind">SERVICES</h1>
           <h3 class="front">SERVICES</h3>
@@ -189,21 +243,21 @@
                 <div class="card p-4 ser-color">
                   <i class="fa-solid fa-basketball my-3"></i>
                   <h5 class="py-3">Lorem Ipsum</h5>
-                  <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                  <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi cupidotate</p>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card p-4 ser-color">
                   <i class="fa-regular fa-file my-3"></i>
                   <h5 class="py-3">Sed ut perspiciatis</h5>
-                  <p>Duis aute irure dolor in reprehederit in voluptate velit esse cilum dolore</p>
+                  <p>Duis aute irure dolor in reprehederit excepturi in voluptate velit esse cilum dolore excepturi</p>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card p-4 ser-color">
                   <i class="fa-regular fa-clock my-3"></i>
                   <h5 class="py-3">Magni Dolores</h5>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia cupidotate</p>
                 </div>
               </div>
           </div>
@@ -237,7 +291,7 @@
 
     <!-- Portfolio -->
 
-    <section class="mt-5">
+    <section class="mt-5" id="Portfolio">
       <div class="container">
         <h1 class="behind">PORTFOLIO</h1>
         <h3 class="front">PORTFOLIO</h3>
@@ -250,7 +304,7 @@
         <p class="para">WEB</p>
         </div>
 
-        <div class="row">
+        <div class="row pb-4">
           <div class="col-md-4">
             <div class="row img1 pt-4">
               <img src="./Image/portfolio-1.jpg" alt="" width="100%">
@@ -428,15 +482,17 @@
 
 <!-- Testimonials -->
    
-      <section class="mt-5">
+      <section class="testimonials mt-5">
         <div class="container">
           <h1 class="behind">TESTIMONIALS</h1>
           <h3 class="front">TESTIMONIALS</h3>
-          <p class="service-para">Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+          <p class="service-para pb-2">Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
   <div class="owl-carousel owl-theme">
     <div class="main-box">
       <div class="wh-card">
-        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i> Lorem Ipsum dolor sit amet, connectetur dadipiscing elit. Consequatur, rem hic quidam optio qui enim officia quisquam exercitationem pariatur ipsa velit id aperiam sunt cuidate ratione error atque doloribus obcaecati. <i class="fa-solid fa-quote-right quotes"></i></i></p>
+        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i> Lorem Ipsum dolor sit amet, connectetur dadipiscing elit. 
+          Consequatur, rem hic quidam optio qui enim officia quisquam exercitationem pariatur ipsa velit id aperiam sunt cuidate 
+          ratione obcaecati. <i class="fa-solid fa-quote-right quotes"></i></i></p>
       </div>
       <div class="profile">
         <img src="./Image/testimonials-1.jpg" alt="">
@@ -447,7 +503,9 @@
 
     <div class="main-box">
       <div class="wh-card">
-        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i> Export tempor illum tamen malis malis eram quoe irure esse labore quern cilum. <i class="fa-solid fa-quote-right quotes"></i></i></p>
+        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i> Export tempor illum tamen malis malis eram quoe irure esse 
+          labore quern cilum quid cillum eram mailis quorum velit fore eram velit sunt aliqua noster fugiot irure amet legam anim culpa.
+           <i class="fa-solid fa-quote-right quotes"></i></i></p>
       </div>
       <div class="profile">
         <img src="./Image/testimonials-2.jpg" alt="">
@@ -458,34 +516,37 @@
 
     <div class="main-box">
       <div class="wh-card">
-        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i> Lorem Ipsum dolor sit amet, connectetur dadipiscing elit. Consequatur, rem hic quidam optio qui enim officia quisquam exercitationem pariatur ipsa velit id aperiam sunt cuidate ratione error atque doloribus obcaecati. <i class="fa-solid fa-quote-right quotes"></i></i></p>
+        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i>Enim nisi quem export duis labore cillum quoe magna enim sint quorum nulla quem
+          veniam duis minim tempor labore quem eraro duis noster oute amet eram fore quis sint minim.<i class="fa-solid fa-quote-right quotes"></i></i></p>
       </div>
       <div class="profile">
         <img src="./Image/testimonials-3.jpg" alt="">
-        <h3>Saul Goodman</h3>
-        <p>Ceo & Founder</p>
+        <h3>Jena Karlis</h3>
+        <p>Store Owner</p>
       </div>
     </div>
 
     <div class="main-box">
       <div class="wh-card">
-        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i> Lorem Ipsum dolor sit amet, connectetur dadipiscing elit. Consequatur, rem hic quidam optio qui enim officia quisquam exercitationem pariatur ipsa velit id aperiam sunt cuidate ratione error atque doloribus obcaecati. <i class="fa-solid fa-quote-right quotes"></i></i></p>
+        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i> Fugiat enim eram quoe cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis
+          veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam. <i class="fa-solid fa-quote-right quotes"></i></i></p>
       </div>
       <div class="profile">
         <img src="./Image/testimonials-4.jpg" alt="">
-        <h3>Saul Goodman</h3>
-        <p>Ceo & Founder</p>
+        <h3>Matt Brandon</h3>
+        <p>Freelancer</p>
       </div>
     </div>
 
     <div class="main-box">
       <div class="wh-card">
-        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i> Lorem Ipsum dolor sit amet, connectetur dadipiscing elit. Consequatur, rem hic quidam optio qui enim officia quisquam exercitationem pariatur ipsa velit id aperiam sunt cuidate ratione error atque doloribus obcaecati. <i class="fa-solid fa-quote-right quotes"></i></i></p>
+        <p class="align"><i><i class="fa-solid fa-quote-left quotes"></i> Quosis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim 
+          enim culpa labore duis sunt culpa nullo illum cillum fugiot legarn esse veniam culpa fore nisi cillum quid. <i class="fa-solid fa-quote-right quotes"></i></i></p>
       </div>
       <div class="profile">
         <img src="./Image/testimonials-5.jpg" alt="">
-        <h3>Saul Goodman</h3>
-        <p>Ceo & Founder</p>
+        <h3>John Larson</h3>
+        <p>Enterpreneur</p>
       </div>
     </div>
   </div>
@@ -510,7 +571,7 @@
 
 <!-- Team -->
 
-<section class="team-bg">
+<section class="team-bg" id="Team">
   <div class="container team">
           <h1 class="behind">TEAM</h1>
           <h3 class="front">TEAM</h3>
@@ -519,7 +580,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="white-bg">
-        <img class="p-3 mt-3" src="./Image/team-1.jpg" alt="" width="100%">y
+        <img class="p-3 mt-3" src="./Image/team-1.jpg" alt="" width="100%">
         <center>
         <h3 class="pt-3">Walter White</h3>
         <i>Chief Executive Officer</i>
@@ -573,7 +634,7 @@
 
 <!-- Contact -->
 
-<section>
+<section id="Contact">
   <div class="container">
       <h1 class="behind">CONTACT</h1>
       <h3 class="front">CONTACT</h3>
@@ -673,21 +734,34 @@
       <h2 class="h3-size">eNno</h2>
       <p class="py-3 foot-para"><i>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</i> </p>
       <div class="d-flex">
-        <input type="text" class="form-control">
+        <input type="text" placeholder="Enter your Email" class="form-control">
         <button type="button" class="btn btn-success subscribe">Subscribe</button>
       </div>
+      <div class="footer-icon pt-4 pb-4">
+        <i class="fa-brands fa-twitter "></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-skype"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div> 
     </div>
     </center>
+    <hr>
+      <div class="d-flex justify-content-between">
+        <p class="font-size"><i class="fa-regular fa-copyright"></i> Copyright <b>eNno.</b>All Rights Reserved</p>
+        <p class="font-size">Redesigned By <span class="text-success">Edure</span></p>
+      </div>
   </div>
 </footer>
-
+<!-- footer -->
 
 <!-- arrow -->
+<section class="pt-4">
     <div class="arrow">
       <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
-
-
+  </section>
+<!-- arrow -->
 
 
 
@@ -699,7 +773,7 @@
     <script>
       $('.owl-carousel').owlCarousel({
       autoplay:true,
-      autolayHoverPause:true,
+      autplayHoverPause:true,
       dots:true,
     loop:true,
     margin:10,
@@ -708,11 +782,17 @@
         0:{
             items:1
         },
-        600:{
+        768:{
+        
+          items:2
+        },
+        992:{
+          dotsEach:1,
             items:3
         },
-        1000:{
-            items:5
+        1400:{
+          dotsEach:1,
+            items:3
         }
     }
 })
@@ -720,42 +800,3 @@
       
   </body>
 </html>
-
-<!-- .navbar a, .navbar a:focus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0 10px 30px;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: #6a7489;
-    white-space: nowrap;
-    transition: 0.3s;
-  
-  .navbar .dropdown ul a {
-    padding: 10px 20px;
-    font-size: 15px;
-    text-transform: none;
-    font-weight: 600;
-}
-
-<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-
--->
